@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="Estilos/style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="creacion_tarea">
+    <!-- <form class="form"> -->
+      <input class="campo_tarea_crear" id="input0" type="text" placeholder="Título...">
+      <textarea class="campo_tarea_crear" id="input1" placeholder="Descripción..."></textarea>
+      <input class="campo_tarea_crear" id="input2" type="submit" value="+">
+    <!-- </form> -->
+  </div>
+
+  <section class="tareas">
+    <p class="contadorTareasPendientes">Tareas pendientes: </p>
+    <h2 class="titulo_tareas">Tareas Asignadas</h2>
+    <div class="buscador">
+      <select class="filtro">
+        <option>Completadas</option>
+        <option>Pendientes</option>
+        <option>N/A</option>
+      </select>
+      <input value="Filtrar" class="iniciarBusqueda" type="submit">
+    </div>
+    <div class="contenedorPadreTotal"></div>
+  </section>
+
+  <script src="JS/script.js"></script>
+</body>
+</html>

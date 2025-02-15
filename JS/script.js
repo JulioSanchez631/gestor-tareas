@@ -9,18 +9,18 @@ class AgregarTarea1{
   crearTarea(){
       return `
       <div class="contenedores"> 
-        <input class="nota" type="text" placeholder="Titulo..." required value="${this.title}">
+        <input class="nota" type="text" placeholder="Titulo..." required value="${this.title}" placeholder="Titulo...">
   
       </div>
       
-      <div class="contenedores"> 
-        <textarea class="nota text1" placeholder="Descripción..." required>${this.description}</textarea>
-  
+      <div class="contenedores">
+        <textarea class="nota text1" placeholder="Descripción..." required placeholder="Descripción...">${this.description}</textarea>
+
       </div>
   
       <div class="contenedores btn_options">
         <button class="delete_note${this.contador} btn-delete">Eliminar</button>
-        <label class="check1"> Completado:<input class="comprobador" type="checkbox"> </label>
+        <label class="check1"><input class="comprobador" type="checkbox"> Completado </label>
       </div>`;
 
   }

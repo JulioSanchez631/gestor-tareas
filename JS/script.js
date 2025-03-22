@@ -27,11 +27,9 @@ class AgregarTarea1{
 
 }
 
-
+const contenedorPadreT = document.querySelector(".contenedorPadreTotal");
 // Funcionalidad "Crear nueva tarea".
 const agregarTareaFuncion = (contador) => {
-
-  const contenedorPadreT = document.querySelector(".contenedorPadreTotal");
 
   const titulo = document.getElementById("input0").value;
   const texto = document.getElementById("input1").value;
@@ -49,6 +47,12 @@ const agregarTareaFuncion = (contador) => {
   crearTarea1.innerHTML = nuevaTarea.crearTarea();
 
   contenedorPadreT.appendChild(crearTarea1);
+
+  console.log(contenedorPadreT.outerHTML);
+
+  // Guardandolo en el navegador
+
+  localStorage.setItem("TareasGuardadas123",contenedorPadreT.innerHTML)
   }
   
 }
@@ -78,6 +82,8 @@ const EliminarNota1 = (evento) => {
   contadorTareasCreadas--;
   tareaEliminar.remove();
   NotasPendientes();
+
+  localStorage.setItem("TareasGuardadas123",contenedorPadreT.innerHTML)
 }
 
 // Funcionalidad tarea Completada
@@ -114,12 +120,14 @@ contenedor.addEventListener("click",(evento) => {
 })
 
 // Funcionalidad "Contador de notas pendientes"
+const contadorTareasPendiente = document.querySelector(".contadorTareasPendientes");
 const NotasPendientes = () => {
-  const contadorTareasPendiente = document.querySelector(".contadorTareasPendientes");
   const contenedorPadreT = document.querySelector(".contenedorPadreTotal");
   let contador = 0;
   contador = contenedorPadreT.childElementCount - tareasCompletadas;
   contadorTareasPendiente.innerHTML = `Tareas pendientes: ${contador}`;
+
+  localStorage.setItem("contadorGuardado12",contadorTareasPendiente.innerHTML)  
 
 } 
 
@@ -175,3 +183,12 @@ btnFiltro.addEventListener("click",() => {
   Filtro()
 
 })
+
+// Recuperando el progreso con localStorage
+
+const tareaGuardadas = localStorage.getItem("TareasGuardadas123");
+// localStorage.clear();
+contenedor.innerHTML = tareaGuardadas;
+
+const contadorGuardado = localStorage.getItem("contadorGuardado12");
+contadorTareasPendiente.innerHTML = contadorGuardado
